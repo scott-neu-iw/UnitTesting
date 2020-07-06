@@ -91,7 +91,7 @@ namespace CalculatorTests
             calc.Subtract(value);
 
             // Assert
-            Assert.True(false);
+            Assert.Contains("0 - 5.0", calc.History);
         }
 
         [Fact]
@@ -107,7 +107,7 @@ namespace CalculatorTests
             calc.Multiply(value);
 
             // Assert
-            Assert.True(false);
+            Assert.Contains("5.0 * 5.0", calc.History);
         }
 
         [Fact]
@@ -123,7 +123,7 @@ namespace CalculatorTests
             calc.Divide(value);
 
             // Assert
-            Assert.True(false);
+            Assert.Contains("15.0 / 5.0", calc.History);
         }
 
         [Fact]
