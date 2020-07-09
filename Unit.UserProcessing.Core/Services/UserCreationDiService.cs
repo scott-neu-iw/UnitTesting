@@ -29,8 +29,8 @@ namespace Unit.UserProcessing.Core.Services
             // get AD user
             var adUser = _adRepository.GetUserByEmailAddress(user.EmailAddress);
 
-            if (adUser == null) new TaskResult(false, "The AD user not found");
-            if (adUser.Enabled == false) new TaskResult(false, "The AD user is not active");
+            if (adUser == null) return new TaskResult(false, "The AD user not found");
+            if (adUser.Enabled == false) return new TaskResult(false, "The AD user is not active");
 
             // add DB User if needed
             await _userRepository.AddAsync(user.ToDataModel());
